@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravi Computer Point</title>
+    <link rel="shortcut icon" href="Transparent Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        @media print {
+            .noPrint{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--Start Code From Here-->
+    <div class="container-fluid bg-light p-3 shadow-sm noPrint">
+        <div class="d-flex justify-content-between align-items-center">
+            <h3>Ravi Computer Point</h3>
+            <h3>Print Aadhar Card • <i class="fa fa-print"></i> <i class="fa fa-id-card"></i></h3>
+        </div>
+    </div>
+
+    <!-- Main Start Here -->
+    <div class="container mt-4 noPrint mb-4">
+        <div class="row">
+            <div class="col-lg-4 col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5><i class="fa fa-upload"></i> Upload Aadhar Card</h5>
+                    </div>
+                    <div class="card-body">
+                        <label for="front" class="form-label">Upload Front Side</label>
+                        <input type="file" id="front" class="form-control" oninput="frontImage.src=window.URL.createObjectURL(this.files[0])">
+                        <label for="back" class="form-label mt-4">Upload Back Side</label>
+                        <input type="file" id="back" class="form-control" oninput="backImage.src=window.URL.createObjectURL(this.files[0])">
+                        <button class="btn btn-dark mt-4" onclick="printCard()"><i class="fa fa-print"></i> Print</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5><i class="fa fa-eye"></i> Preview & Edit</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Front Side</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <img src="https://placehold.co/300x200" alt="" id="frontImage" width="300px" height="200px">
+                                    </div>
+                                    <div class="card-footer">
+                                        <label for="control" class="form-label mb-2">Brightness</label>
+                                        <input type="range" id="frontBrightness" class="form-range" onchange="front()">
+                                        <label for="control" class="form-label mb-2">Contrast</label>
+                                        <input type="range" id="frontContrast" class="form-range" onchange="front()">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Back Side</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <img src="https://placehold.co/300x200" alt="" id="backImage" width="300px" height="200px">
+                                    </div>
+                                    <div class="card-footer">
+                                        <label for="control" class="form-label mb-2">Brightness</label>
+                                        <input type="range" id="backBrightness" class="form-range" onchange="back()">
+                                        <label for="control" class="form-label mb-2">Contrast</label>
+                                        <input type="range" id="backContrast" class="form-range" onchange="back()">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main End Here -->
+
+    <!-- Aadhar Card Print Here -->
+    <div class="d-flex justify-content-center d-none" id="printArea">
+        <img src="https://placehold.co/300x200" alt="" id="frontPrint" width="300px" height="200px" class="border border-3 rounded">
+        &nbsp;&nbsp;
+        <img src="https://placehold.co/300x200" alt="" id="backPrint" width="300px" height="200px" class="border border-3 rounded">
+    </div>
+    <!-- Aadhar Card Print Here End -->
+
+    <!-- Footer Start Here -->
+    <div class="container-fluid bg-light p-3 noPrint">
+        <div class="d-flex justify-content-between align-items-center">
+            <h5>Made with <i class="fa fa-heart text-danger"></i> Rcpoint.in</h5>
+            <h5>This site is not storing any files on server. This page is made only with (Java Script).</h5>
+        </div>
+    </div>
+    <!-- Footer End Here -->
+
+    <!-- Jquery, Bootstrap and Sweet Alert CDN Links -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+</body>
+</html>
